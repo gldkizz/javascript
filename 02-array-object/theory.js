@@ -20,6 +20,10 @@ names.sort((a, b) => {
   return a.charCodeAt(0) - b.charCodeAt(0); // по возрастанию
   // return b.charCodeAt(0) - a.charCodeAt(0) // по убыванию
 });
+const array = [16, 1, 8, 2, 4]
+array.sort((a,b) => {
+  return a-b // по возрастанию
+})
 names.toSorted(); // сортирует и не меняет оригинальный массив, возвращает новый
 
 names.splice(2, 1); // удаляет из оригинального массива один элемент с индексом 2 и возвращает этот элемент в виде массива

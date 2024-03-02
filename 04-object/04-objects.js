@@ -20,6 +20,16 @@ const person = {
     },
 }
 
+const updateObj = {
+    name: 'Vladilen',
+    age: 20,
+}
+
+const newObj = {
+    ...person,
+    ...updateObj // берёт значение из первого обьекта и обновляет значения из второго
+}
+
 
 // console.log(person)
 // person.info()
