@@ -78,3 +78,26 @@ function createPerson(name) {
 const addLastName = createPerson('Timur')
 addLastName('Gapter')
 addLastName('Minin')
+
+function createCounter(startValue){
+    num = startValue
+    return {
+        inc: function() {
+            return num += 1
+        },
+        dec: function() {
+            return num -= 1
+        },
+        get: function() {
+            return num
+        }
+    }
+}
+
+const {inc,dec,get} = createCounter(5)
+console.log(get()); // 5
+inc();
+inc();
+inc();
+dec();
+console.log(get()); // 7

@@ -1,15 +1,17 @@
-function getNumberDigit(num,digitPosition) {
-    strNum = num.toString()
-    if(strNum.length - 1 >= digitPosition){
-        return strNum[digitPosition]
-    }else{
-        return undefined
+const boxFactory = {
+    type: 'box',
+    count: 0,
+    produce: () => {
+        boxFactory.count++
+        return 'Box №' + boxFactory.count
     }
 }
 
+const produceBox = (produceFn) => {
+    const boxName = produceFn()
+    console.log(boxName)
+}
 
-console.log(getNumberDigit(123, 0)) // 1
-console.log(getNumberDigit(123, 1)) // 2
-console.log(getNumberDigit(123, 2)) // 3
-console.log(getNumberDigit(123, 3)) // 3
-console.log(getNumberDigit(1, 2)) // undefined
+for(i = 0; i < 25; i++){
+    produceBox(boxFactory.produce)
+}
